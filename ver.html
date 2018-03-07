@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Lifan</title>
+  </head>
+  <body>
+    <!-- built files will be auto injected -->
+    <script src="./t.js"></script>
+    <script type="text/javascript" src="./p.js"></script>
+    <script>
+        var panorama, viewer;
+
+panorama = new PANOLENS.ImagePanorama( 'back.jpg' );
+
+viewer = new PANOLENS.Viewer(
+  {	// A DOM Element container
+		output: 'console'
+  }
+);
+viewer.add( panorama );</script>
+  </body>
+</html>
