@@ -4,6 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>Lifan</title>
+    <style>
+      body {
+        width: 100%;
+        height:110vh;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
   </head>
   <body>
     <!-- built files will be auto injected -->
@@ -12,11 +20,25 @@
     <script>
         var panorama, viewer;
 
-panorama = new PANOLENS.ImagePanorama( 'back.jpg' );
+panorama = new PANOLENS.ImagePanorama( 'https://raw.githubusercontent.com/rogeriogois/360/master/back.JPG' );
 
 viewer = new PANOLENS.Viewer(
   {	// A DOM Element container
-		output: 'console'
+    container: document.body,		// A DOM Element container
+		controlBar: true, 			// Vsibility of bottom control bar
+		controlButtons: [],			// Buttons array in the control bar. Default to ['fullscreen', 'setting', 'video']
+		autoHideControlBar: false,		// Auto hide control bar
+		autoHideInfospot: true,			// Auto hide infospots
+		horizontalView: false,			// Allow only horizontal camera control
+		cameraFov: 80,				// Camera field of view in degree
+		reverseDragging: false,			// Reverse orbit control direction
+		enableReticle: false,			// Enable reticle for mouseless interaction
+		dwellTime: 1500,			// Dwell time for reticle selection in millisecond
+		autoReticleSelect: true,		// Auto select a clickable target after dwellTime
+		viewIndicator: false,			// Adds an angle view indicator in upper left corner
+		indicatorSize: 30,			// Size of View Indicator
+		output: 'console'	
+
   }
 );
 viewer.add( panorama );</script>
